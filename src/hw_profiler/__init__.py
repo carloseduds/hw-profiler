@@ -1,12 +1,15 @@
 """hw_profiler package.
 
-Hardware profiling utilities designed to run from laptops/PCs to edge devices.
+Portable profiling utilities designed to run from PCs to edge devices.
+
+Public API:
+- Hardware profiling: build_profile, print_human_summary, run_summary
+
+Optional modules:
+- Runtime profiling (requires torch): hw_profiler.torch_profiler
+- GPU monitoring (requires pynvml): hw_profiler.gpu_monitor
 """
 
-from .core import (  # noqa: F401
-    build_profile,
-    print_human_summary,
-    run_summary,
-)
+from .hardware import build_profile, print_human_summary, run_summary
 
 __all__ = ["build_profile", "print_human_summary", "run_summary"]

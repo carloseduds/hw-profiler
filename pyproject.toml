@@ -27,6 +27,15 @@ full = [
   "pynvml>=11.5.0",
   "torch",
 ]
+torch = [
+  "torch",
+]
+nvml = [
+  "pynvml>=11.5.0",
+]
+system = [
+  "psutil>=5.9.0",
+]
 
 [project.scripts]
 hw-profiler = "hw_profiler.cli:main"
