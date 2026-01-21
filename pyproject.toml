@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hw-profiler"
+version = "0.1.0"
+description = "Portable hardware profiler (PC → edge) with NVIDIA GPU support and safe fallbacks."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "Carlos", email = "carlos@example.com"}
+]
+keywords = ["hardware", "profiler", "nvidia", "gpu", "edge", "mlops"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+full = [
+  "psutil>=5.9.0",
+  "pynvml>=11.5.0",
+  "torch",
+]
+
+[project.scripts]
+hw-profiler = "hw_profiler.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.black]
+line-length = 88
